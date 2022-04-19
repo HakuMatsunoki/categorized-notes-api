@@ -55,3 +55,11 @@ process.on('unhandledRejection', (err) => {
     process.exit(1);
   });
 });
+
+// heroku specific (correct shutdown)
+process.on('SIGTERM', (err) => {
+  console.log('=======> SIGTERM received, shutting down...', err);
+  server.close(() => {
+    console.log('=========> process terminated.');
+  });
+});
