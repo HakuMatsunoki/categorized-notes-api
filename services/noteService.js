@@ -33,7 +33,8 @@ exports.createOne = async (noteData) => {
  * @returns {Promise<Object>}
  */
 exports.getOne = async (id) => {
-  const note = await Note.findOne({ id }).lean();
+  console.log(id);
+  const note = await Note.findById(id).lean();
 
   if (!note) throw new AppError('Item not found', 404);
 
@@ -47,7 +48,7 @@ exports.getOne = async (id) => {
  * @returns {Promise<Object>}
  */
 exports.findOneAndUpdate = async (id, data) => {
-  const updatedNote = await Note.findOneAndUpdate({ id }, data, { new: true }).lean();
+  const updatedNote = await Note.findByIdAndUpdate(id, data, { new: true }).lean();
 
   if (!updatedNote) throw new AppError('Item not found', 404);
 
@@ -60,7 +61,7 @@ exports.findOneAndUpdate = async (id, data) => {
  * @returns {Promise<void>}
  */
 exports.findOneAndDelete = async (id) => {
-  const deletedNote = await Note.findOneAndDelete({ id }).lean();
+  const deletedNote = await Note.findByIdAndDelete(id).lean();
 
   if (!deletedNote) throw new AppError('Item not found', 404);
 };
