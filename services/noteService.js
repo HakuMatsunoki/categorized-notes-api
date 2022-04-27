@@ -103,7 +103,7 @@ exports.deleteAll = async (isArchived) => {
  * @returns {Promise<Object>}
  */
 exports.toggleArch = async (isArchived) => {
-  const updatedNotes = await Note.updateMany({ archived: isArchived }, { archived: !isArchived }, { new: true }).lean();
+  const updatedNotes = await Note.updateMany({ archived: !isArchived }, { archived: isArchived }, { new: true }).lean();
 
   return updatedNotes;
 };
