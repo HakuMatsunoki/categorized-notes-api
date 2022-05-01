@@ -1,4 +1,4 @@
-# Categorized notes react app
+# Categorized notes node server
 
 This is a backend part of the "Categorized notes" app, you can find [here](https://github.com/HakuMatsunoki/categorized-notes).
 You can create, edit, categorize your own notes and save data on the server.
