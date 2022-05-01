@@ -1,6 +1,6 @@
 # Categorized notes react app
 
-This is backend part of "Categorized notes" app, you can find [here](https://github.com/HakuMatsunoki/categorized-notes).
+This is a backend part of the "Categorized notes" app, you can find [here](https://github.com/HakuMatsunoki/categorized-notes).
 You can create, edit, categorize your own notes and save data on the server.
 
 ### Available Scripts
